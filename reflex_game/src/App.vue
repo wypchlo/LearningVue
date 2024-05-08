@@ -1,37 +1,44 @@
 <template>
   <h1> Reaction timer </h1>
-  <ReflexInput v-if="inputShown" @click="handleClick()"/>
+  <button @click="start()"> Start game </button>
+  <ReflexInput v-if="inputShown" @click="handleClick()" />
 
-  <ReflexResult v-if="resultShown" :time="undefined"/>
+  <ReflexResult v-if="resultShown" :time="undefined" />
 </template>
 
 <script>
-import ReflexInput from './components/ReflexInput.vue';
-import ReflexResult from './components/ReflexResult.vue';
+import ReflexInput from "./components/ReflexInput.vue";
+import ReflexResult from "./components/ReflexResult.vue";
 
 export default {
-  name: 'App',
-  components: 
-  {
+  name: "App",
+  components: {
     ReflexInput,
-    ReflexResult
+    ReflexResult,
   },
-  data()
-  {
-      return{
-          inputShown: true,
-          resultShown: false
-      }
+  data() {
+    return {
+      inputShown: false,
+      resultShown: false,
+      isPlaying: false,
+    };
   },
   methods: {
-      handleClick()
-      {
-          this.inputShown = false;
-          this.resultShown = true;
-          this.$emit('clicked');
-      }
-  }
-}
+    handleClick() {
+      this.inputShown = false;
+      this.resultShown = true;
+      this.isPlaying = false;
+      this.$emit("clicked");
+    },
+    start() {
+      if(this.isPlaying == true) return;
+
+      this.resultShown = false;
+      this.isPlaying = true;
+      this.inputShown = true;      
+    },
+  },
+};
 </script>
 
 <style>

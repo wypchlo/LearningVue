@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1> Reaction timer </h1>
-    <button @click="startGame" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
+    <button @click="startGame" :disabled="isPlaying"> Start game </button>
   </header>
   
   <ReflexInput v-if="isPlaying" :delay="delay" @timerStopped="endGame" />
@@ -48,5 +48,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+button{
+  user-select: none;
 }
 </style>

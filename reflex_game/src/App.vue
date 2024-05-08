@@ -1,15 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1> Reaction timer </h1>
+  <ReflexInput/>
+
+  <ReflexResult/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ReflexInput from './components/ReflexInput.vue';
+import ReflexResult from './components/ReflexResult.vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: 
+  {
+    ReflexInput,
+    ReflexResult
   }
 }
 </script>

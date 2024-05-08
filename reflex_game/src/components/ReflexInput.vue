@@ -1,6 +1,6 @@
 <template>
     <div v-if='inputShown' @click="stopTimer" id='reflexinput'>
-       <b> CLICK NOW {{ delay }}</b> 
+       <b> CLICK NOW</b> 
     </div>
 </template>
 

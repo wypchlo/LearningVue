@@ -1,10 +1,10 @@
 <template>
   <header>
     <h1> Reaction timer </h1>
-    <button @click="start()" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
+    <button @click="startGame" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
   </header>
   
-  <ReflexInput v-if="isPlaying" :delay="delay" @click="startGame" @timerStopped="endGame" />
+  <ReflexInput v-if="isPlaying" :delay="delay" @timerStopped="endGame" />
   <ReflexResult v-if="resultShown" :reactionTime="reactionTime" />
 </template>
 

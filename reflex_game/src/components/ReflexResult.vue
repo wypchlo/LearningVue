@@ -1,5 +1,5 @@
 <template>
-  <h1 id="result">You clicked the input in: {{ reactionTime }}ms</h1>
+  <h1 id="result">You clicked the input in {{ reactionTime }}ms</h1>
 </template>
 
 <script>

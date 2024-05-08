@@ -1,5 +1,5 @@
 <template>
-    <div v-if='inputShown' @click="stopTimer()" id='reflexinput'>
+    <div v-if='inputShown' @click="stopTimer" id='reflexinput'>
        <b> CLICK NOW {{ delay }}</b> 
     </div>
 </template>
@@ -10,12 +10,11 @@
         props: [
             'delay'
         ],
-        data()
-        {
-            return{
+        data() {
+            return {
                 inputShown: false,
                 timer: null,
-                reactionTime: 0
+                reactionTime: null
             }
         },
         mounted()
@@ -29,7 +28,7 @@
             startTimer()
             {
                 this.timer = setInterval(() => {
-                    this.reactionTime+=10
+                    this.reactionTime += 10
                 }, 10);
             },
             stopTimer()

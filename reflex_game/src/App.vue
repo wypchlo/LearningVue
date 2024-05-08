@@ -1,9 +1,11 @@
 <template>
-  <h1> Reaction timer </h1>
-  <button @click="start()" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
-  <ReflexInput v-if="isPlaying" :delay="delay" @click="timerStarted" @timerStopped="timerStopped" />
-
-  <ReflexResult v-if="resultShown" :time="undefined" :reactionTime="reactionTime" />
+  <header>
+    <h1> Reaction timer </h1>
+    <button @click="start()" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
+  </header>
+  
+  <ReflexInput v-if="isPlaying" :delay="delay" @click="startGame" @timerStopped="endGame" />
+  <ReflexResult v-if="resultShown" :reactionTime="reactionTime" />
 </template>
 
 <script>
@@ -12,30 +14,30 @@ import ReflexResult from "./components/ReflexResult.vue";
 
 export default {
   name: "App",
-  components: {
-    ReflexInput,
-    ReflexResult,
-  },
   data() {
     return {
       resultShown: false,
       isPlaying: false,
-      delay: 0,
-      reactionTime: 0
+      delay: null,
+      reactionTime: null
     };
   },
   methods: {
-    start() {
+    startGame() {
       this.delay = 2000 + Math.random() * 5000;
       this.resultShown = false;
       this.isPlaying = true;
     },
-    timerStopped(time)
+    endGame(duration)
     {
-      this.reactionTime = time;
+      this.reactionTime = duration;
       this.isPlaying = false;
       this.resultShown = true;
     },
+  },
+  components: {
+    ReflexInput,
+    ReflexResult,
   },
 };
 </script>
@@ -43,8 +45,6 @@ export default {
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;

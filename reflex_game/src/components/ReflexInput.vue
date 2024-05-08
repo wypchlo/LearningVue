@@ -6,7 +6,7 @@
 
 <script>
     export default{
-        name: 'ReflexInput'
+        name: 'ReflexInput', 
     }
 </script>
 
@@ -22,6 +22,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
     }
 
     #reflexinput b{

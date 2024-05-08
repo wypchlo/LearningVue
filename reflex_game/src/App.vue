@@ -1,8 +1,8 @@
 <template>
   <h1> Reaction timer </h1>
-  <ReflexInput/>
+  <ReflexInput v-if="inputShown" @click="handleClick()"/>
 
-  <ReflexResult/>
+  <ReflexResult v-if="resultShown" :time="undefined"/>
 </template>
 
 <script>
@@ -15,6 +15,21 @@ export default {
   {
     ReflexInput,
     ReflexResult
+  },
+  data()
+  {
+      return{
+          inputShown: true,
+          resultShown: false
+      }
+  },
+  methods: {
+      handleClick()
+      {
+          this.inputShown = false;
+          this.resultShown = true;
+          this.$emit('clicked');
+      }
   }
 }
 </script>

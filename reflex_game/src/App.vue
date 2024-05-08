@@ -1,9 +1,9 @@
 <template>
   <h1> Reaction timer </h1>
-  <button @click="start()"> Start game </button>
-  <ReflexInput v-if="inputShown" @click="handleClick()" />
+  <button @click="start()" v-if="{disabled: isPlaying}" :reactionTime="reactionTime"> Start game </button>
+  <ReflexInput v-if="isPlaying" :delay="delay" @click="timerStarted" @timerStopped="timerStopped" />
 
-  <ReflexResult v-if="resultShown" :time="undefined" />
+  <ReflexResult v-if="resultShown" :time="undefined" :reactionTime="reactionTime" />
 </template>
 
 <script>
@@ -18,24 +18,23 @@ export default {
   },
   data() {
     return {
-      inputShown: false,
       resultShown: false,
       isPlaying: false,
+      delay: 0,
+      reactionTime: 0
     };
   },
   methods: {
-    handleClick() {
-      this.inputShown = false;
-      this.resultShown = true;
-      this.isPlaying = false;
-      this.$emit("clicked");
-    },
     start() {
-      if(this.isPlaying == true) return;
-
+      this.delay = 2000 + Math.random() * 5000;
       this.resultShown = false;
       this.isPlaying = true;
-      this.inputShown = true;      
+    },
+    timerStopped(time)
+    {
+      this.reactionTime = time;
+      this.isPlaying = false;
+      this.resultShown = true;
     },
   },
 };

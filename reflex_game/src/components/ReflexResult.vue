@@ -1,11 +1,13 @@
 <template>
-  <h1 id="result">You clicked the input in: {{ time }}ms</h1>
+  <h1 id="result">You clicked the input in: {{ reactionTime }}ms</h1>
 </template>
 
 <script>
 export default {
   name: "ReflexResult",
-  props: ["time"],
+  props: [
+    "reactionTime"
+  ],
 };
 </script>
 

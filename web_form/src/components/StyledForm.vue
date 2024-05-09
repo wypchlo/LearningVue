@@ -39,15 +39,20 @@
    #backdrop form h1{
         padding-bottom: 10px;
         margin-bottom: 0px;
-        border-bottom: 1px solid lightgray
+        border-bottom: 1px solid #F4F2F2
    }
    
    #backdrop form input{
-        border: 1px solid lightgray;
+        border: 1px solid #F4F2F2;
+        border-top: 0;
+        border-right: 0;
+        border-left: 0;
+        outline: 0;
    }
 
    #backdrop form input:focus{
-        border: 1px solid gray;
+        border: 1px solid #F4F2F2;
+        background-color: #F4F2F2;
         padding: 0;
    }
 </style>

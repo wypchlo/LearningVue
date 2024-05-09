@@ -1,24 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <StyledForm title="Welcome!">
+      <label><p> Name </p><input type="text"></label>
+      <label><p> Surname </p><input type="text"></label>
+      <label><p> Email </p><input type="email"></label>
+  </StyledForm>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StyledForm from './components/StyledForm.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    StyledForm 
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Avenir, Helvetica, Arial, sans-serif; 
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;

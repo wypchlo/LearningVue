@@ -8,12 +8,14 @@
     export default{
         data() {
             return {
-                jobs: [
-                    {title: "Job1", id: 1},
-                    {title: "Job2", id: 2},
-                    {title: "Job3", id: 3}
-                ]
+                jobs: []
             }
+        },
+        mounted() {
+            fetch('http://localhost:3000/jobs')
+                .then((res) => res.json())
+                .then((data) => this.jobs = data)
+                .catch(err => console.error(err.messsage))
         }
     }
 </script>

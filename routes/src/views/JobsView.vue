@@ -1,7 +1,8 @@
 <template>
-    <router-link :to="{ name: 'job', params: { id: job.id } }" v-for="job in jobs" :key="job.id">
-        {{ job.title }}
-    </router-link>
+    <div v-if="jobs.length">
+        <router-link :to="{ name: 'job', params: { id: job.id } }" v-for="job in jobs" :key="job.id"> {{ job.title }} </router-link>
+    </div> 
+    <div v-else> Loading... </div>
 </template>
 
 <script>

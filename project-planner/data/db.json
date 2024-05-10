@@ -1,0 +1,7 @@
+{
+    "projects": [
+        {"id": 1, "name": "Basic vue project", "completed": false, "description": "A test project that I'm working on"},
+        {"id": 2, "name": "Basic laravel project", "completed": false, "description": "A test project that I will be working on"},
+        {"id": 3, "name": "Basic reflex game", "completed": true, "description": "A test project that I have completed recently"}
+    ]
+}

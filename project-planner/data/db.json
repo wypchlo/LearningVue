@@ -17,6 +17,12 @@
       "name": "Basic reflex game",
       "completed": true,
       "description": "A test project that I have completed recently"
+    },
+    {
+      "id": "28bc",
+      "name": "A simple project",
+      "description": "just a simple project",
+      "completed": true
     }
   ]
 }

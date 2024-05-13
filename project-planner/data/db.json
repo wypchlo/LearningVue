@@ -15,14 +15,14 @@
     {
       "id": "3",
       "name": "Basic reflex game",
-      "completed": true,
+      "completed": false,
       "description": "A test project that I have completed recently"
     },
     {
       "id": "28bc",
       "name": "A simple project",
       "description": "just a simple project",
-      "completed": true
+      "completed": false
     }
   ]
 }
